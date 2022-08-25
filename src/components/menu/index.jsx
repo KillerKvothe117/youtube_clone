@@ -20,11 +20,11 @@ import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightne
 
 const Container = styled.div`
   flex: 1;
-  background-color: #202020;
-  height: 100vh;
-  color: #fff;
+  background-color: ${({ theme }) => theme.bgLighter};
+  /* height: 100vh; */
+  color: ${({ theme }) => theme.text};
   font-size: 14px;
-  padding-bottom: 68%;
+  padding-bottom: 8%;
   position: sticky;
   top: 0;
 `;
@@ -55,12 +55,10 @@ const Item = styled.div`
 
 const Hr = styled.hr`
   margin: 15px 0;
-  border: 0.5px solid #373737;
+  border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
-const Login = styled.div``;
-
-const Button = styled.button`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
@@ -74,7 +72,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Menu = () => {
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+`;
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -104,14 +109,15 @@ const Menu = () => {
           <p>History</p>
         </Item>
         <Hr />
-        <Login>
+        <div>
           <p>Sign in to like videos, comment and subscribe.</p>
           <Button>
             <AccountCircleOutlinedIcon />
             SIGN IN
           </Button>
-        </Login>
+        </div>
         <Hr />
+        <Title>BEST OF KVOTHEHUB</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           <p>Music</p>
@@ -149,7 +155,7 @@ const Menu = () => {
           <HelpOutlineOutlinedIcon />
           <p>Help</p>
         </Item>
-        <Item>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
           <p>Dark Mode</p>
         </Item>
