@@ -32,5 +32,8 @@ export const Search = styled.div`
 
 export const SearchInput = styled.input`
   border: none;
+  outline: none;
+  width: 400px;
   background-color: transparent;
+  color: ${({ theme }) => theme.text};
 `;

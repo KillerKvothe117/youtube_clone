@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AppContainer from "./components/appContainer/index.style";
 import Wrapper from "./components/wrapper/index.style";
@@ -6,7 +8,8 @@ import Menu from "./components/menu";
 import Navbar from "./components/navbar";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./utils/theme";
-import { useState } from "react";
+import Home from "./pages/home";
+import SingleVideo from "./pages/singleVideo";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -14,13 +17,22 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <AppContainer>
-        <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Main>
-          <Navbar />
-          <Wrapper>
-            <h2>Test</h2>
-          </Wrapper>
-        </Main>
+        <Router>
+          <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Main>
+            <Navbar />
+            <Wrapper>
+              <Routes>
+                <Route path="/">
+                  <Route index element={<Home />} />
+                  <Route path="video">
+                    <Route path=":id" element={<SingleVideo />} />
+                  </Route>
+                </Route>
+              </Routes>
+            </Wrapper>
+          </Main>
+        </Router>
       </AppContainer>
     </ThemeProvider>
   );
