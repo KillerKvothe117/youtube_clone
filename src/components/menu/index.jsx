@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import HomeIcon from "@mui/icons-material/Home";
@@ -83,10 +84,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Image src={logo} />
-          KvotheHub
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Image src={logo} />
+            KvotheHub
+          </Logo>
+        </Link>
         <Item>
           <HomeIcon />
           <p>Home</p>
