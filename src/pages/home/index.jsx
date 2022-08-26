@@ -1,9 +1,43 @@
-import React from 'react'
+import React from "react";
+import Card from "../../components/card";
+import { HomeContainer } from "./home.style";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <HomeContainer>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </HomeContainer>
+  );
+};
 
-export default Home
+export default Home;
