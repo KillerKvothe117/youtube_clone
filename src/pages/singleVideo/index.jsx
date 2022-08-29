@@ -26,6 +26,7 @@ import {
 } from "@mui/icons-material";
 import { Hr } from "../../components/menu";
 import pfp from "../../assets/pfp.jpg";
+import Comments from "../../components/comments";
 
 const SingleVideo = () => {
   return (
@@ -79,6 +80,8 @@ const SingleVideo = () => {
           </ChannelInfo>
           <Subscribe>SUBSCRIBE</Subscribe>
         </Description>
+        <Hr />
+        <Comments></Comments>
       </Content>
       <Recommendation>Recommendation</Recommendation>
     </VideoContainer>
