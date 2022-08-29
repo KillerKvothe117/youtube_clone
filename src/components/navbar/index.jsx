@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../menu";
 import { NavContainer, NavWrapper, Search, SearchInput } from "./navbar.style";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -12,10 +13,12 @@ const Navbar = () => {
           <SearchInput placeholder="search..." />
           <SearchOutlinedIcon />
         </Search>
-        <Button style={{ marginTop: "0" }}>
-          <AccountCircleOutlinedIcon />
-          SIGN IN
-        </Button>
+        <Link to="signin" style={{ textDecoration: "none" }}>
+          <Button style={{ marginTop: "0" }}>
+            <AccountCircleOutlinedIcon />
+            SIGN IN
+          </Button>
+        </Link>
       </NavWrapper>
     </NavContainer>
   );

@@ -118,10 +118,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Hr />
         <div>
           <p>Sign in to like videos, comment and subscribe.</p>
-          <Button>
-            <AccountCircleOutlinedIcon />
-            SIGN IN
-          </Button>
+          <Link to="signin" style={{ textDecoration: "none" }}>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Link>
         </div>
         <Hr />
         <Title>BEST OF KVOTHEHUB</Title>

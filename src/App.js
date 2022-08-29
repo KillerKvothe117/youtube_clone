@@ -10,6 +10,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./utils/theme";
 import Home from "./pages/home";
 import SingleVideo from "./pages/singleVideo";
+import Login from "./pages/login";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -25,6 +26,7 @@ function App() {
               <Routes>
                 <Route path="/">
                   <Route index element={<Home />} />
+                  <Route path="signin" element={<Login />} />
                   <Route path="video">
                     <Route path=":id" element={<SingleVideo />} />
                   </Route>
