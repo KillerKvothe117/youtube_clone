@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import HomeIcon from "@mui/icons-material/Home";
@@ -20,11 +21,11 @@ import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightne
 
 const Container = styled.div`
   flex: 1;
-  background-color: #202020;
+  background-color: ${({ theme }) => theme.bgLighter};
   height: 100vh;
-  color: #fff;
+  color: ${({ theme }) => theme.text};
   font-size: 14px;
-  padding-bottom: 68%;
+  padding-bottom: 78%;
   position: sticky;
   top: 0;
 `;
@@ -51,16 +52,18 @@ const Item = styled.div`
   gap: 20px;
   cursor: pointer;
   padding: 7.5px 0;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 
-const Hr = styled.hr`
+export const Hr = styled.hr`
   margin: 15px 0;
-  border: 0.5px solid #373737;
+  border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
-const Login = styled.div``;
-
-const Button = styled.button`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
@@ -74,14 +77,23 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Menu = () => {
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+`;
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Image src={logo} />
-          KvotheHub
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Image src={logo} />
+            KvotheHub
+          </Logo>
+        </Link>
         <Item>
           <HomeIcon />
           <p>Home</p>
@@ -104,14 +116,17 @@ const Menu = () => {
           <p>History</p>
         </Item>
         <Hr />
-        <Login>
+        <div>
           <p>Sign in to like videos, comment and subscribe.</p>
-          <Button>
-            <AccountCircleOutlinedIcon />
-            SIGN IN
-          </Button>
-        </Login>
+          <Link to="signin" style={{ textDecoration: "none" }}>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
+          </Link>
+        </div>
         <Hr />
+        <Title>BEST OF KVOTHEHUB</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           <p>Music</p>
@@ -149,9 +164,9 @@ const Menu = () => {
           <HelpOutlineOutlinedIcon />
           <p>Help</p>
         </Item>
-        <Item>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
-          <p>Dark Mode</p>
+          <p>{darkMode ? "Light" : "Dark"} Mode</p>
         </Item>
       </Wrapper>
     </Container>
