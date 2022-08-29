@@ -54,7 +54,7 @@ const Item = styled.div`
   padding: 7.5px 0;
 `;
 
-const Hr = styled.hr`
+export const Hr = styled.hr`
   margin: 15px 0;
   border: 0.5px solid ${({ theme }) => theme.soft};
 `;
@@ -160,7 +160,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />
-          <p>Dark Mode</p>
+          <p>{darkMode ? "Light" : "Dark"} Mode</p>
         </Item>
       </Wrapper>
     </Container>
