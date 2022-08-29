@@ -27,6 +27,7 @@ import {
 import { Hr } from "../../components/menu";
 import pfp from "../../assets/pfp.jpg";
 import Comments from "../../components/comments";
+import Card from "../../components/card";
 
 const SingleVideo = () => {
   return (
@@ -35,12 +36,12 @@ const SingleVideo = () => {
         <VideoWrapper>
           <iframe
             width="100%"
-            height="498"
+            height="490"
             src="https://www.youtube.com/embed/yIaXoop8gl4?list=PLj-4DlPRT48mDB819AYgn3mQoTfCuheCX"
             title="React Video Sharing App UI Design | Youtube UI Clone with React"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </VideoWrapper>
         <Title>Test Video</Title>
@@ -83,7 +84,20 @@ const SingleVideo = () => {
         <Hr />
         <Comments></Comments>
       </Content>
-      <Recommendation>Recommendation</Recommendation>
+      <Recommendation>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+      </Recommendation>
     </VideoContainer>
   );
 };

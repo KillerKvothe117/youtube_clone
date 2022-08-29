@@ -12,13 +12,13 @@ import {
 import thumbnail from "../../assets/thumbnail.jpg";
 import pfp from "../../assets/pfp.jpg";
 
-const Card = () => {
+const Card = ({ type }) => {
   return (
     <Link to="/video/test" style={{ textDecoration: "none" }}>
-      <CardContainer>
-        <Image src={thumbnail} />
-        <Details>
-          <ChannelImage src={pfp} />
+      <CardContainer type={type}>
+        <Image src={thumbnail} type={type} />
+        <Details type={type}>
+          <ChannelImage src={pfp} type={type} />
           <div>
             <Title>Test Video</Title>
             <ChannelName>KvotheYT</ChannelName>
